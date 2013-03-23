@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1364031489 source:c:\users\yves\documents\ibz-casestudy\quellcode\main.c
+	<stdio.h>
+	<stdlib.h>
+

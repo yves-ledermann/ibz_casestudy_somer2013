@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <math.h>
 
+#include "analyse.h"
+#include "functions.h"
+#include "menu_main.h"
+
 
 int main()
 {
@@ -10,17 +14,13 @@ int main()
 int iMainMenuSelection=0;
 int iMainMenuExit=0;
 int iMainMenuFileLoaded=0;/**< Datei erfolgreich geladen */
+int iRow=0;
+int iValue=0;
 
 
 do // MainMenu
 {
-    printf("1 Einlesen der Datei mit den Messwerten\n");
-    printf("2 Ausgeben der Messwerte am Bildschirm\n");
-    printf("3 Auswertung der Messwerte\n");
-    printf("4 Exportieren der Messwerte\n");
-    printf("5 Beenden des Programms\n");
-
-    scanf("%d", &iMainMenuSelection);
+   iMainMenuSelection=menu_main(iMainMenuFileLoaded);
 
     switch (iMainMenuSelection)
     {
@@ -33,7 +33,7 @@ do // MainMenu
 
         //Rückgabewert auswerten
 
-        //iMainMenuFileLoaded=1;
+        iMainMenuFileLoaded=1;
         break;
 
     case 2: //Ausgeben der Messwerte am Bildschirm
@@ -42,8 +42,10 @@ do // MainMenu
 
     case 3: //Auswertung der Messwerte
          printf("3 Auswertung der Messwerte\n");
-         SubMenu1();
-         SubMenu2();
+         iRow=SelectRow();
+         iValue=SelectValue();
+         Analyse(iRow, iValue);
+
          break;
 
     case 4: //Exportieren der Messwerte

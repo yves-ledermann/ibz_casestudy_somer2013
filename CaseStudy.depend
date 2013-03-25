@@ -1,31 +1,34 @@
 # depslib dependency file v1.0
-1364246683 source:c:\users\yves\documents\ibz-casestudy\quellcode\main.c
+1364247504 source:c:\users\yves\documents\ibz-casestudy\quellcode\main.c
+	"main.h"
+
+1364241564 source:c:\users\yves\documents\ibz-casestudy\quellcode\submenu1.c
+
+1364241567 source:c:\users\yves\documents\ibz-casestudy\quellcode\submenu2.c
+
+1364247504 source:c:\users\yves\documents\ibz-casestudy\quellcode\menu_main.c
+	"menu_main.h"
+
+1364247504 source:c:\users\yves\documents\ibz-casestudy\quellcode\functions.c
+	"functions.h"
+
+1364247504 source:c:\users\yves\documents\ibz-casestudy\quellcode\analyse.c
+	"analyse.h"
+
+1364247504 c:\users\yves\documents\ibz-casestudy\quellcode\analyse.h
+	<stdio.h>
+
+1364247504 c:\users\yves\documents\ibz-casestudy\quellcode\functions.h
+	<stdio.h>
+
+1364247504 c:\users\yves\documents\ibz-casestudy\quellcode\menu_main.h
+	<stdio.h>
+
+1364247504 c:\users\yves\documents\ibz-casestudy\quellcode\main.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 	"analyse.h"
 	"functions.h"
 	"menu_main.h"
-
-1364241564 source:c:\users\yves\documents\ibz-casestudy\quellcode\submenu1.c
-
-1364241567 source:c:\users\yves\documents\ibz-casestudy\quellcode\submenu2.c
-
-1364246625 source:c:\users\yves\documents\ibz-casestudy\quellcode\menu_main.c
-	"menu_main.h"
-
-1364246270 source:c:\users\yves\documents\ibz-casestudy\quellcode\functions.c
-	"functions.h"
-
-1364246657 source:c:\users\yves\documents\ibz-casestudy\quellcode\analyse.c
-	"analyse.h"
-
-1364246874 c:\users\yves\documents\ibz-casestudy\quellcode\analyse.h
-	<stdio.h>
-
-1364246874 c:\users\yves\documents\ibz-casestudy\quellcode\functions.h
-	<stdio.h>
-
-1364246874 c:\users\yves\documents\ibz-casestudy\quellcode\menu_main.h
-	<stdio.h>
 

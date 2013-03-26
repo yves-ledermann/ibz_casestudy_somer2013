@@ -31,11 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="./analyse.c">
+		<Unit filename="analyse.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="./analyse.h" />
-		<Unit filename="./main.h" />
+		<Unit filename="analyse.h" />
+		<Unit filename="export.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="export.h" />
+		<Unit filename="file_read.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="file_read.h" />
 		<Unit filename="functions.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -43,6 +50,7 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="main.h" />
 		<Unit filename="menu_main.c">
 			<Option compilerVar="CC" />
 		</Unit>

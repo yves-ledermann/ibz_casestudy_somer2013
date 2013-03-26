@@ -32,3 +32,43 @@
 	"functions.h"
 	"menu_main.h"
 
+1364307243 source:c:\users\yves\documents\repos\ibz casestudy\analyse.c
+	"analyse.h"
+
+1364307243 c:\users\yves\documents\repos\ibz casestudy\analyse.h
+	<stdio.h>
+
+1364307243 source:c:\users\yves\documents\repos\ibz casestudy\functions.c
+	"functions.h"
+
+1364307243 c:\users\yves\documents\repos\ibz casestudy\functions.h
+	<stdio.h>
+
+1364307243 source:c:\users\yves\documents\repos\ibz casestudy\menu_main.c
+	"menu_main.h"
+
+1364307243 c:\users\yves\documents\repos\ibz casestudy\menu_main.h
+	<stdio.h>
+
+1364308930 source:c:\users\yves\documents\repos\ibz casestudy\export.c
+	"export.h"
+
+1364309182 c:\users\yves\documents\repos\ibz casestudy\export.h
+	<stdio.h>
+
+1364309162 source:c:\users\yves\documents\repos\ibz casestudy\main.c
+	"main.h"
+
+1364307243 c:\users\yves\documents\repos\ibz casestudy\main.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"analyse.h"
+	"functions.h"
+	"menu_main.h"
+
+1364311588 source:c:\users\yves\documents\repos\ibz casestudy\file_read.c
+	"file_read.h"
+
+1364311164 c:\users\yves\documents\repos\ibz casestudy\file_read.h
+

@@ -9,6 +9,7 @@ int main()
     int iMainMenuFileLoaded=0;/**< Datei erfolgreich geladen */
     int iRow=0;
     int iValue=0;
+    int iExportReturnValue=0;
 
     /**< Haupt-Menü Anzeigen */
     do // MainMenu
@@ -43,6 +44,15 @@ int main()
 
         case 4: //Exportieren der Messwerte
             printf("4 Exportieren der Messwerte\n");
+
+            iExportReturnValue=ExportData();
+
+            //Meldung export
+            if (iExportReturnValue)
+                printf("Daten erfolgreich Exportiert\n");
+            else
+                printf("Die Daten konnten nicht exportiert werden\n");
+
             break;
         case 5: //Beenden des Programms
             iMainMenuExit=1;

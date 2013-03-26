@@ -8,6 +8,7 @@
 #include "analyse.h"
 #include "functions.h"
 #include "menu_main.h"
+#include "export.h"
 
 
 #endif // MAIN_H_INCLUDED

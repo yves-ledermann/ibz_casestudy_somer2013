@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-int read_file(char* acdatein);
+int ImportDatei(char* acdatein);
 
 #endif // FILE_READ_INCLUDED

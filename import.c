@@ -1,32 +1,32 @@
-#include "file_read.h"
+#include "import.h"
 
 #define FILE_HEADER "IBZ_Programmiertechnik_Messdatei"
 
-int read_file(char* acdatein)
+int ImportDatei(char* acDateiNameEinlesen)
 {
     int file_status=0;
     FILE *datei;
-    char headerbuffer[100];
+    char acKopfzeile[100];
 
     #ifdef DEBUG
-    printf("%s\n", acdatein);
+    printf("%s\n", acDateiNameEinlesen);
     #endif
 
-    datei=fopen(acdatein, "r");
+    datei=fopen(acDateiNameEinlesen, "r");
     if (datei != NULL)
     {
     do
         {
-        fgets(headerbuffer, 100, datei);
-            if (headerbuffer != 0)
+        fgets(acKopfzeile, 100, datei);
+            if (acKopfzeile != 0)
             {
                 #ifdef DEBUG
-                printf("%s", headerbuffer);
+                printf("%s", acKopfzeile);
                 #endif
                 file_status=2; // Kopfzeile eingelesen
             }
         }
-        while (headerbuffer != 0);
+        while (acKopfzeile != 0);
         fclose(datei);
     }
     else

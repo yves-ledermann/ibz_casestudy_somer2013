@@ -12,38 +12,38 @@ int main()
     int iExportStatus=0;
 
     char acDateiNameEinlesen[50]; // Dateiname zum Einlesen
-    //char acDateiNameExport[50]; // Dateiname zum Exportieren
+    char acDateiNameExport[50]; // Dateiname zum Exportieren
 
     //Haupt-Menü Anzeigen
     do // MainMenu
     {
-        iHauptMenuAuswahl=menu_main(iEinlesenStatus);
+        iHauptMenuAuswahl=HauptMenu(iEinlesenStatus);
 
         switch (iHauptMenuAuswahl)
         {
         case 1: //Einlesen der Datei mit den Messwerte
-            #ifdef DEBUG
+#ifdef DEBUG
             printf("1 Einlesen der Datei mit den Messwerten\n");
-            #endif // DEBUG
+#endif // DEBUG
 
             //Abfrage des Dateinamens
             printf("Bitte Dateinamen eingeben\n");
             scanf("%s", acDateiNameEinlesen);
 
             //Übergabe des Dateinamens an readFile();
-            iEinlesenStatus=read_file(acDateiNameEinlesen);
-            #ifdef DEBUG
+            iEinlesenStatus=ImportDatei(acDateiNameEinlesen);
+#ifdef DEBUG
             printf("%d", iEinlesenStatus);
-            #endif
+#endif
             //Rückgabewert auswerten
 
             iEinlesenStatus=6;
             break;
 
         case 2: //Ausgeben der Messwerte am Bildschirm
-            #ifdef DEBUG
+#ifdef DEBUG
             printf("2 Ausgeben der Messwerte am Bildschirm\n");
-            #endif // DEBUG
+#endif // DEBUG
             break;
 
         case 3: //Auswertung der Messwerte
@@ -54,12 +54,17 @@ int main()
             break;
 
         case 4: //Exportieren der Messwerte
-          {
-            #ifdef DEBUG
+        {
+#ifdef DEBUG
             printf("4 Exportieren der Messwerte\n");
-            #endif // DEBUG
+#endif // DEBUG
 
-            iExportStatus=ExportData();
+            //Abfrage des Dateinamens
+            printf("Bitte Dateinamen für Export eingeben\n");
+            scanf("%s", acDateiNameExport);
+
+            //Übergabe des Dateinamens an Export();
+            iExportStatus=ExportDatei(acDateiNameExport);
 
             //Meldung export
             if (iExportStatus)
@@ -77,9 +82,6 @@ int main()
             printf("Falsche Eingabe\n");
             break;
         }
-
-
-
     }
     while (!iHauptMenuEnde);
 

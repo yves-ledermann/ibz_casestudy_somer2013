@@ -6,10 +6,9 @@
 #include <math.h>
 
 #include "analyse.h"
-#include "functions.h"
-#include "menu_main.h"
+#include "menus.h"
 #include "export.h"
-#include "file_read.h"
+#include "import.h"
 
 
 #endif // MAIN_H_INCLUDED

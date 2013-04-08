@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-int ExportData();
+int ExportDatei(char* acDateiNameExport);
 
 #endif // EXPORT_H_INCLUDED

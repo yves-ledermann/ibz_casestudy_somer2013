@@ -39,22 +39,18 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="export.h" />
-		<Unit filename="file_read.c">
+		<Unit filename="import.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="file_read.h" />
-		<Unit filename="functions.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="functions.h" />
+		<Unit filename="import.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.h" />
-		<Unit filename="menu_main.c">
+		<Unit filename="menus.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="menu_main.h" />
+		<Unit filename="menus.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

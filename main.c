@@ -1,68 +1,87 @@
 #include "main.h"
 
+//#define DEBUG
+
 int main()
 {
+    int iHauptMenuAuswahl=0;
+    int iHauptMenuEnde=0;
+    int iEinlesenStatus=0; // 6= Datei geladen
+    int iSpalte=0;
+    int iWert=0;
+    int iExportStatus=0;
 
+    char acDateiNameEinlesen[50]; // Dateiname zum Einlesen
+    //char acDateiNameExport[50]; // Dateiname zum Exportieren
 
-    int iMainMenuSelection=0;
-    int iMainMenuExit=0;
-    int iMainMenuFileLoaded=0;/**< Datei erfolgreich geladen */
-    int iRow=0;
-    int iValue=0;
-    int iExportReturnValue=0;
-
-    /**< Haupt-Menü Anzeigen */
+    //Haupt-Menü Anzeigen
     do // MainMenu
     {
-        iMainMenuSelection=menu_main(iMainMenuFileLoaded);
+        iHauptMenuAuswahl=menu_main(iEinlesenStatus);
 
-        switch (iMainMenuSelection)
+        switch (iHauptMenuAuswahl)
         {
         case 1: //Einlesen der Datei mit den Messwerte
+            #ifdef DEBUG
             printf("1 Einlesen der Datei mit den Messwerten\n");
+            #endif // DEBUG
 
             //Abfrage des Dateinamens
+            printf("Bitte Dateinamen eingeben\n");
+            scanf("%s", acDateiNameEinlesen);
 
             //Übergabe des Dateinamens an readFile();
-
+            iEinlesenStatus=read_file(acDateiNameEinlesen);
+            #ifdef DEBUG
+            printf("%d", iEinlesenStatus);
+            #endif
             //Rückgabewert auswerten
 
-            iMainMenuFileLoaded=1;
+            iEinlesenStatus=6;
             break;
 
         case 2: //Ausgeben der Messwerte am Bildschirm
+            #ifdef DEBUG
             printf("2 Ausgeben der Messwerte am Bildschirm\n");
+            #endif // DEBUG
             break;
 
         case 3: //Auswertung der Messwerte
             printf("3 Auswertung der Messwerte\n");
-            iRow=SelectRow();
-            iValue=SelectValue();
-            Analyse(iRow, iValue);
-
+            iSpalte=SelectRow();
+            iWert=SelectValue();
+            Analyse(iSpalte, iWert);
             break;
 
         case 4: //Exportieren der Messwerte
+          {
+            #ifdef DEBUG
             printf("4 Exportieren der Messwerte\n");
+            #endif // DEBUG
 
-            iExportReturnValue=ExportData();
+            iExportStatus=ExportData();
 
             //Meldung export
-            if (iExportReturnValue)
+            if (iExportStatus)
                 printf("Daten erfolgreich Exportiert\n");
             else
                 printf("Die Daten konnten nicht exportiert werden\n");
-
             break;
+
+        }
         case 5: //Beenden des Programms
-            iMainMenuExit=1;
+            iHauptMenuEnde=1;
+            break;
+
+        default: //Fehlermeldung
+            printf("Falsche Eingabe\n");
             break;
         }
 
 
 
     }
-    while (!iMainMenuExit);
+    while (!iHauptMenuEnde);
 
     return 0;
 }

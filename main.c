@@ -1,8 +1,8 @@
 #include "main.h"
 
-//#define DEBUG
+#define DEBUG
 
-int main()
+int main(int argc, char *argv[])
 {
     int iHauptMenuAuswahl=0;
     int iHauptMenuEnde=0;
@@ -11,8 +11,27 @@ int main()
     int iWert=0;
     int iExportStatus=0;
 
-    char acDateiNameEinlesen[50]; // Dateiname zum Einlesen
-    char acDateiNameExport[50]; // Dateiname zum Exportieren
+    char acDateiNameEinlesen[FILENAME_MAX]; // Dateiname zum Einlesen
+    char acDateiNameExport[FILENAME_MAX]; // Dateiname zum Exportieren
+
+
+    // Auf Kommandozeilen Argumente prüfen
+    if (argc == 2)
+    {
+         #ifdef DEBUG
+        printf("Datei von Kommandozeile\n");
+        printf("%s\n", argv[1]);
+        #endif // DEBUG
+
+        //Übergabe des Dateinamens an readFile();
+        iEinlesenStatus=ImportDatei(argv[1]);
+        #ifdef DEBUG
+        printf("%d", iEinlesenStatus);
+        #endif
+
+
+    }
+
 
     //Haupt-Menü Anzeigen
     do // MainMenu
@@ -22,9 +41,10 @@ int main()
         switch (iHauptMenuAuswahl)
         {
         case 1: //Einlesen der Datei mit den Messwerte
-#ifdef DEBUG
+
+            #ifdef DEBUG
             printf("1 Einlesen der Datei mit den Messwerten\n");
-#endif // DEBUG
+            #endif // DEBUG
 
             //Abfrage des Dateinamens
             printf("Bitte Dateinamen eingeben\n");
@@ -32,18 +52,18 @@ int main()
 
             //Übergabe des Dateinamens an readFile();
             iEinlesenStatus=ImportDatei(acDateiNameEinlesen);
-#ifdef DEBUG
+            #ifdef DEBUG
             printf("%d", iEinlesenStatus);
-#endif
+            #endif
             //Rückgabewert auswerten
 
             iEinlesenStatus=6;
             break;
 
         case 2: //Ausgeben der Messwerte am Bildschirm
-#ifdef DEBUG
+            #ifdef DEBUG
             printf("2 Ausgeben der Messwerte am Bildschirm\n");
-#endif // DEBUG
+            #endif // DEBUG
             break;
 
         case 3: //Auswertung der Messwerte
@@ -55,9 +75,9 @@ int main()
 
         case 4: //Exportieren der Messwerte
         {
-#ifdef DEBUG
+            #ifdef DEBUG
             printf("4 Exportieren der Messwerte\n");
-#endif // DEBUG
+            #endif // DEBUG
 
             //Abfrage des Dateinamens
             printf("Bitte Dateinamen für Export eingeben\n");

@@ -1,5 +1,18 @@
 #include "menus.h"
 
+/*
+    //Test zum löschen der Konsole
+    #include <stdlib.h>
+    #if WIN32
+    #define CLEAR system( "cls" );
+    #endif
+    #if LINUX
+    #define CLEAR system( "clear" );
+    #endif
+
+     //Bildschirm leeren
+    CLEAR
+*/
 
 // Haupmenü anzeigen
 int HauptMenu(int iDateiGeladen)
@@ -8,6 +21,7 @@ int HauptMenu(int iDateiGeladen)
     #ifdef DEBUG
     printf("MAINMENU:\n");
     #endif // DEBUG
+
 
     printf("1 Einlesen der Datei mit den Messwerten\n");
     if (iDateiGeladen==6)

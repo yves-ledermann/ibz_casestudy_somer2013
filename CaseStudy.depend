@@ -50,28 +50,40 @@
 1364310843 c:\users\yves\documents\repos\ibz casestudy\menu_main.h
 	<stdio.h>
 
-1364312530 source:c:\users\yves\documents\repos\ibz casestudy\export.c
+1365457635 source:c:\users\yves\documents\repos\ibz casestudy\export.c
 	"export.h"
 
-1364312782 c:\users\yves\documents\repos\ibz casestudy\export.h
+1365457635 c:\users\yves\documents\repos\ibz casestudy\export.h
 	<stdio.h>
 
-1365455423 source:c:\users\yves\documents\repos\ibz casestudy\main.c
+1365541987 source:c:\users\yves\documents\repos\ibz casestudy\main.c
 	"main.h"
 
-1365443968 c:\users\yves\documents\repos\ibz casestudy\main.h
+1365457614 c:\users\yves\documents\repos\ibz casestudy\main.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 	"analyse.h"
-	"functions.h"
-	"menu_main.h"
+	"menus.h"
 	"export.h"
-	"file_read.h"
+	"import.h"
 
 1365455172 source:c:\users\yves\documents\repos\ibz casestudy\file_read.c
 	"file_read.h"
 
 1365454113 c:\users\yves\documents\repos\ibz casestudy\file_read.h
 	<stdio.h>
+
+1365457765 c:\users\yves\documents\repos\ibz casestudy\menus.h
+	<stdio.h>
+
+1365457598 c:\users\yves\documents\repos\ibz casestudy\import.h
+	<stdio.h>
+
+1365537992 source:c:\users\yves\documents\repos\ibz casestudy\menus.c
+	"menus.h"
+	<stdlib.h>
+
+1365539711 source:c:\users\yves\documents\repos\ibz casestudy\import.c
+	"import.h"
 

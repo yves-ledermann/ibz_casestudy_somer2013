@@ -2,36 +2,42 @@
 
 #define FILE_HEADER "IBZ_Programmiertechnik_Messdatei"
 
+//#define DEBUG
+
+
 int ImportDatei(char* acDateiNameEinlesen)
 {
     int iImportStatus=0;
     FILE *datei;
     char acKopfzeile[100];
 
-#ifdef DEBUG
+    #ifdef DEBUG
     printf("%s\n", acDateiNameEinlesen);
-#endif
+    #endif
 
+
+    // Datei öffnen
     datei=fopen(acDateiNameEinlesen, "r");
-    if (datei != NULL)
+    if (datei == NULL)
     {
-        do
-        {
-            fgets(acKopfzeile, 100, datei);
-            if (acKopfzeile != 0)
+        iImportStatus=1; // Datei kann nicht geöffnet werden
+    }
+    else
+    {
+        if (fgets(acKopfzeile, 100, datei) ==0)
+            {
+                iImportStatus=3; // Kopfzeile kann nicht gelesen werden
+            }
+        else
             {
                 #ifdef DEBUG
                 printf("%s", acKopfzeile);
                 #endif
                 iImportStatus=2; // Kopfzeile eingelesen
             }
-        }
-        while (acKopfzeile != 0);
-        fclose(datei);
-    }
-    else
-    {
-        iImportStatus=1; // Datei kann nicht geöffnet werden
+
+    // Datei schliessen
+    fclose(datei);
     }
 
 

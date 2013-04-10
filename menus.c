@@ -22,6 +22,8 @@ int HauptMenu(int iDateiGeladen)
     printf("MAINMENU:\n");
     #endif // DEBUG
 
+//Bildschirm leeren
+    CLEAR
 
     printf("1 Einlesen der Datei mit den Messwerten\n");
     if (iDateiGeladen==6)

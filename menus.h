@@ -7,4 +7,16 @@ int HauptMenu(int iMainMenuFileLoaded);
 
 int SelectRow();
 int SelectValue();
+
+
+ //Test zum l�schen der Konsole
+    #include <stdlib.h>
+    #if WIN32
+    #define CLEAR system( "cls" );
+    #endif
+    #if LINUX
+    #define CLEAR system( "clear" );
+    #endif
+
+
 #endif // MENUS_H_INCLUDED

@@ -9,7 +9,7 @@ int SelectRow();
 int SelectValue();
 
 
- //Test zum l�schen der Konsole
+ //Test zum loeschen der Konsole
     #include <stdlib.h>
     #if WIN32
     #define CLEAR system( "cls" );

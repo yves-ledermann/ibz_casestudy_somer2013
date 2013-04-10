@@ -69,7 +69,9 @@ int main(int argc, char *argv[])
         case 3: //Auswertung der Messwerte
             printf("3 Auswertung der Messwerte\n");
             iSpalte=SelectRow();
+            if (iSpalte!=4)
             iWert=SelectValue();
+            if ((iWert !=4) || (iSpalte !=4))
             Analyse(iSpalte, iWert);
             break;
 

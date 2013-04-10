@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
     //Haupt-Menü Anzeigen
     do // MainMenu
     {
+
         iHauptMenuAuswahl=HauptMenu(iEinlesenStatus);
 
         switch (iHauptMenuAuswahl)

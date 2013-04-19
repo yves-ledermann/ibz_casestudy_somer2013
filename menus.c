@@ -10,8 +10,12 @@ int HauptMenu(int iDateiGeladen)
     printf("MAINMENU:\n");
     #endif // DEBUG
 
-//Bildschirm leeren
+    #ifndef DEBUG
+    //Bildschirm leeren
     CLEAR
+    #endif // DEBUG
+
+
 
 
  printf(" _    _                   _                        _   _ \n");

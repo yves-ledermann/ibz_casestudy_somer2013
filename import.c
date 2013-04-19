@@ -14,30 +14,57 @@ int ImportDatei(char* acDateiNameEinlesen)
     printf("%s\n", acDateiNameEinlesen);
     #endif
 
+    //Datei öffnen
+        datei=fopen(acDateiNameEinlesen, "r");
 
-    // Datei öffnen
-    datei=fopen(acDateiNameEinlesen, "r");
-    if (datei == NULL)
-    {
-        iImportStatus=1; // Datei kann nicht geöffnet werden
-    }
-    else
-    {
-        if (fgets(acKopfzeile, 100, datei) ==0)
-            {
-                iImportStatus=3; // Kopfzeile kann nicht gelesen werden
+        if (datei == NULL){ // Datei kann nicht geöffnet werden
+            iImportStatus=1;
             }
-        else
-            {
-                #ifdef DEBUG
-                printf("%s", acKopfzeile);
-                #endif
-                iImportStatus=2; // Kopfzeile eingelesen
-            }
+        else {
+    //Einlesen der Datei mit den Messwerte
+                if (fgets(acKopfzeile, 100, datei) ==0)
+                    {
+                        iImportStatus=2; // Kopfzeile kann nicht gelesen werden
+                    }
+                else
+                    {
+                        #ifdef DEBUG
+                        printf("%s", acKopfzeile);
+                        #endif
+
+    // Kopfzeile überprüfen
+
+                        #ifdef DEBUG
+                        printf("status Kopfzeilenvergelich %d\n", strncmp ( Kopfzeile ,acKopfzeile,32));
+                        #endif
+
+                    if ((strncmp ( Kopfzeile ,acKopfzeile,32))!=0)
+                        {
+                            iImportStatus=3; // Kopfzeile falsch
+                        }
+                    else
+                        {
+    // Anzahl der Messresultate einlesen
+
+    // Array grösse festlegen
+
+    // Array einlesen
+
+    // Datei erfolgreich eingelesen
+
+                                            iImportStatus=6;
+
 
     // Datei schliessen
-    fclose(datei);
-    }
+
+                                            fclose(datei);
+
+
+
+
+                        } //Kopfzeile Prüfen
+                    } //Einlesen der Datei mit den Messwerte
+                }//Datei öffnen
 
 
     return(iImportStatus);

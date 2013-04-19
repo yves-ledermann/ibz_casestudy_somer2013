@@ -58,7 +58,6 @@ int main(int argc, char *argv[])
             #endif
             //Rückgabewert auswerten
 
-            iEinlesenStatus=6;
             break;
 
         case 2: //Ausgeben der Messwerte am Bildschirm

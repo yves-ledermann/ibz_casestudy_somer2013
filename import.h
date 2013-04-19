@@ -2,6 +2,8 @@
 #define FILE_READ_INCLUDED
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 int ImportDatei(char* acdatein);
 

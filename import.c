@@ -1,9 +1,8 @@
 #include "import.h"
 
-#define FILE_HEADER "IBZ_Programmiertechnik_Messdatei"
+#define Kopfzeile "IBZ_Programmiertechnik_Messdatei"
 
-//#define DEBUG
-
+#define DEBUG
 
 int ImportDatei(char* acDateiNameEinlesen)
 {

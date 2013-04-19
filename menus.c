@@ -1,6 +1,6 @@
 #include "menus.h"
 
-
+#define DEBUG
 
 // Haupmenü anzeigen
 int HauptMenu(int iDateiGeladen)

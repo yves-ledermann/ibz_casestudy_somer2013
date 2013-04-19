@@ -1,4 +1,5 @@
 #include "analyse.h"
+#define DEBUG
 
 int Analyse(int SelectedRow, int SelectedValue)
 {

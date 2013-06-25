@@ -1,6 +1,4 @@
-#include "menus.h"
-
-#define DEBUG
+#include "Menus.h"
 
 // Haupmenü anzeigen
 int HauptMenu(int iDateiGeladen)
@@ -10,11 +8,11 @@ int HauptMenu(int iDateiGeladen)
     printf("MAINMENU:\n");
     #endif // DEBUG
 
-    #ifndef DEBUG
+  /*  #ifndef DEBUG
     //Bildschirm leeren
     CLEAR
     #endif // DEBUG
-
+*/
 
 
 
@@ -30,7 +28,7 @@ int HauptMenu(int iDateiGeladen)
 
 
     printf("1 Einlesen der Datei mit den Messwerten\n");
-    if (iDateiGeladen==6)
+    if (iDateiGeladen==98)
     {
         printf("2 Ausgeben der Messwerte am Bildschirm\n");
         printf("3 Auswertung der Messwerte\n");
@@ -42,7 +40,8 @@ int HauptMenu(int iDateiGeladen)
 }
 
 
-int SelectRow()
+
+int MenuAuswahlSpalte()
 {
     int iRowSelection=0;
 
@@ -53,10 +52,10 @@ int SelectRow()
 
     scanf("%d", &iRowSelection);
 
-    return (iRowSelection);
+    return (iRowSelection-1);
 }
 
-int SelectValue()
+int MenuAuswahlBerechnung()
 {
     int iValueSelection=0;
 

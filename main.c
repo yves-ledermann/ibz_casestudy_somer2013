@@ -1,12 +1,24 @@
 #include "main.h"
 
-#define DEBUG
+// Globale Variablen die in vielen Funktionen Benutzt werden
+int iAnzahlMessungen=0;
+double ** afMesswerte=NULL;
+
+
+int ExportDatei(char* acDateiNameExport);
+int Analyse(int SelectedRow, int SelectedValue);
+int SpeicherFreigeben();
+int ImportDatei(char* acDateiNameEinlesen);
+int HauptMenu(int iDateiGeladen);
+int MenuAuswahlSpalte();
+int MenuAuswahlBerechnung();
+
 
 int main(int argc, char *argv[])
 {
     int iHauptMenuAuswahl=0;
     int iHauptMenuEnde=0;
-    int iEinlesenStatus=0; // 6= Datei geladen
+    int iEinlesenStatus=0; // 98= Datei geladen
     int iSpalte=0;
     int iWert=0;
     int iExportStatus=0;
@@ -14,6 +26,7 @@ int main(int argc, char *argv[])
     char acDateiNameEinlesen[FILENAME_MAX]; // Dateiname zum Einlesen
     char acDateiNameExport[FILENAME_MAX]; // Dateiname zum Exportieren
 
+    int X=0;
 
     // Auf Kommandozeilen Argumente prüfen
     if (argc == 2)
@@ -63,14 +76,25 @@ int main(int argc, char *argv[])
         case 2: //Ausgeben der Messwerte am Bildschirm
             #ifdef DEBUG
             printf("2 Ausgeben der Messwerte am Bildschirm\n");
+            printf("ianzahlmessungen ist %d\n", iAnzahlMessungen);
             #endif // DEBUG
-            break;
+
+            X=0;
+
+            printf("\n ersterwert \t ersterwert \t ersterwert \n ");
+            for (X = 0; X < iAnzahlMessungen ; X++)
+            {
+                printf("\t %.3f \t %.3f \t %.3f \n ", afMesswerte[X][0], afMesswerte[X][1], afMesswerte[X][2]);
+            };
+
+
+        break;
 
         case 3: //Auswertung der Messwerte
             printf("3 Auswertung der Messwerte\n");
-            iSpalte=SelectRow();
+            iSpalte=MenuAuswahlSpalte();
             if (iSpalte!=4)
-            iWert=SelectValue();
+            iWert=MenuAuswahlBerechnung();
             if ((iWert !=4) || (iSpalte !=4))
             Analyse(iSpalte, iWert);
             break;
@@ -97,6 +121,8 @@ int main(int argc, char *argv[])
 
         }
         case 5: //Beenden des Programms
+            SpeicherFreigeben();
+
             iHauptMenuEnde=1;
             break;
 
@@ -104,6 +130,8 @@ int main(int argc, char *argv[])
             printf("Falsche Eingabe\n");
             break;
         }
+
+        // Fehlermeldungen
     }
     while (!iHauptMenuEnde);
 

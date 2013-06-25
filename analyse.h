@@ -2,8 +2,10 @@
 #define ANALYSE_H_INCLUDED
 
 #include <stdio.h>
+#include <stdlib.h>
 
-int Analyse(int SelectedRow, int SelectedValue);
+#define DEBUG
+
 
 
 #endif // ANALYSE_H_INCLUDED

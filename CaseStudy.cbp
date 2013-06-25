@@ -3,11 +3,12 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="CaseStudy" />
+		<Option execution_dir="C:/Users/yves/Documents/IBZ-CaseStudy/test - yves/test/" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/CaseStudy" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/test" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +17,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/CaseStudy" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/test" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -31,39 +32,38 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="analyse.c">
+		<Unit filename="Analyse.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="analyse.h" />
-		<Unit filename="export.c">
+		<Unit filename="Analyse.h" />
+		<Unit filename="DiverseFunktionen.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="export.h" />
-		<Unit filename="import.c">
+		<Unit filename="DiverseFunktionen.h" />
+		<Unit filename="ExportDatei.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="import.h" />
+		<Unit filename="ExportDatei.h" />
+		<Unit filename="Fehlermeldungen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Fehlermeldungen.h" />
+		<Unit filename="ImportDatei.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ImportDatei.h" />
+		<Unit filename="Menus.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Menus.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.h" />
-		<Unit filename="menus.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="menus.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger />
-			<DoxyBlocks>
-				<comment_style block="0" line="0" />
-				<doxyfile_project output_language="German" />
-				<doxyfile_build />
-				<doxyfile_warnings />
-				<doxyfile_output />
-				<doxyfile_dot />
-				<general />
-			</DoxyBlocks>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

@@ -1,6 +1,5 @@
-#include "export.h"
+#include "ExportDatei.h"
 
-#define DEBUG
 
 int ExportDatei(char* acDateiNameExport)
 {

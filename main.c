@@ -81,10 +81,11 @@ int main(int argc, char *argv[])
 
             X=0;
 
-            printf("\n ersterwert \t ersterwert \t ersterwert \n ");
+
+            printf("\nMessung Nr \tSollwert \tIstwert \tRegeldifferenz");
             for (X = 0; X < iAnzahlMessungen ; X++)
             {
-                printf("\t %.3f \t %.3f \t %.3f \n ", afMesswerte[X][0], afMesswerte[X][1], afMesswerte[X][2]);
+                printf("\n%3i \t\t%.3f \t\t%.3f \t\t%.3f", X+1, afMesswerte[X][0], afMesswerte[X][1], afMesswerte[X][2]);
             };
 
 

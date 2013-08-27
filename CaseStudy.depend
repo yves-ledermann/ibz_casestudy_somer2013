@@ -1,83 +1,289 @@
 # depslib dependency file v1.0
-1372113139 source:c:\users\yves\documents\ibz-casestudy\test - yves\version2\main.c
+1377634876 source:c:\users\yves\documents\ibz-casestudy\quellcode\main.c
 	"main.h"
 
-1372111481 c:\users\yves\documents\ibz-casestudy\test - yves\version2\main.h
-	<stdio.h>
-	<stdlib.h>
-	<stdlib.h>
+1364241564 source:c:\users\yves\documents\ibz-casestudy\quellcode\submenu1.c
 
-1372110794 source:c:\users\yves\documents\ibz-casestudy\test - yves\version2\analyse.c
+1364241567 source:c:\users\yves\documents\ibz-casestudy\quellcode\submenu2.c
 
-1372110518 source:c:\users\yves\documents\ibz-casestudy\test - yves\version2\diversefunktionen.c
-	<stdio.h>
-	<stdlib.h>
+1364247504 source:c:\users\yves\documents\ibz-casestudy\quellcode\menu_main.c
+	"menu_main.h"
 
-1372111272 source:c:\users\yves\documents\ibz-casestudy\test - yves\version2\exportdatei.c
-	"ExportDatei.h"
+1364247504 source:c:\users\yves\documents\ibz-casestudy\quellcode\functions.c
+	"functions.h"
 
-1372111481 c:\users\yves\documents\ibz-casestudy\test - yves\version2\exportdatei.h
-	<stdio.h>
-	<stdlib.h>
-
-1372110996 source:c:\users\yves\documents\ibz-casestudy\test - yves\version2\importdatei.c
-	"ImportDatei.h"
-
-1372111481 c:\users\yves\documents\ibz-casestudy\test - yves\version2\importdatei.h
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-
-1372111560 source:c:\users\yves\documents\ibz-casestudy\test - yves\version2\menus.c
-	"Menus.h"
-
-1372109561 c:\users\yves\documents\ibz-casestudy\test - yves\version2\menus.h
-	<stdio.h>
-	<stdlib.h>
-
-1372181174 source:c:\users\yves\documents\ibz-casestudy\quellcode\analyse.c
+1377632871 source:c:\users\yves\documents\ibz-casestudy\quellcode\analyse.c
 	"Analyse.h"
 
-1372181174 source:c:\users\yves\documents\ibz-casestudy\quellcode\diversefunktionen.c
-	"DiverseFunktionen.h"
-
-1372111272 source:c:\users\yves\documents\ibz-casestudy\quellcode\exportdatei.c
-	"ExportDatei.h"
-
-1372181342 c:\users\yves\documents\ibz-casestudy\quellcode\exportdatei.h
+1377632448 c:\users\yves\documents\ibz-casestudy\quellcode\analyse.h
 	<stdio.h>
 	<stdlib.h>
 
-1372182305 source:c:\users\yves\documents\ibz-casestudy\quellcode\importdatei.c
-	"ImportDatei.h"
+1364247504 c:\users\yves\documents\ibz-casestudy\quellcode\functions.h
+	<stdio.h>
 
-1372181342 c:\users\yves\documents\ibz-casestudy\quellcode\importdatei.h
+1364247504 c:\users\yves\documents\ibz-casestudy\quellcode\menu_main.h
+	<stdio.h>
+
+1377633690 c:\users\yves\documents\ibz-casestudy\quellcode\main.h
+	<stdio.h>
+	<stdlib.h>
+
+1366388591 source:c:\users\yves\documents\repos\ibz casestudy\analyse.c
+	"analyse.h"
+
+1364310843 c:\users\yves\documents\repos\ibz casestudy\analyse.h
+	<stdio.h>
+
+1364310843 source:c:\users\yves\documents\repos\ibz casestudy\functions.c
+	"functions.h"
+
+1364310843 c:\users\yves\documents\repos\ibz casestudy\functions.h
+	<stdio.h>
+
+1365442616 source:c:\users\yves\documents\repos\ibz casestudy\menu_main.c
+	"menu_main.h"
+
+1364310843 c:\users\yves\documents\repos\ibz casestudy\menu_main.h
+	<stdio.h>
+
+1366388589 source:c:\users\yves\documents\repos\ibz casestudy\export.c
+	"export.h"
+
+1365457635 c:\users\yves\documents\repos\ibz casestudy\export.h
+	<stdio.h>
+
+1369680514 source:c:\users\yves\documents\repos\ibz casestudy\main.c
+	"main.h"
+
+1369680770 c:\users\yves\documents\repos\ibz casestudy\main.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"analyse.h"
+	"export.h"
+	"funktionen.h"
+	"import.h"
+	"menus.h"
+	<stdlib.h>
+
+1365455172 source:c:\users\yves\documents\repos\ibz casestudy\file_read.c
+	"file_read.h"
+
+1365454113 c:\users\yves\documents\repos\ibz casestudy\file_read.h
+	<stdio.h>
+
+1365633228 c:\users\yves\documents\repos\ibz casestudy\menus.h
+	<stdio.h>
+	<stdlib.h>
+
+1369680834 c:\users\yves\documents\repos\ibz casestudy\import.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1372181342 source:c:\users\yves\documents\ibz-casestudy\quellcode\main.c
-	"main.h"
+1366656867 source:c:\users\yves\documents\repos\ibz casestudy\menus.c
+	"menus.h"
 
-1372111481 c:\users\yves\documents\ibz-casestudy\quellcode\main.h
+1369681149 source:c:\users\yves\documents\repos\ibz casestudy\import.c
+	"import.h"
+	"globale-vars.h"
+
+1369680780 c:\users\yves\documents\repos\ibz casestudy\funktionen.h
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
+
+1369680863 source:c:\users\yves\documents\repos\ibz casestudy\funktionen.c
+	"funktionen.h"
+	"globale-vars.h"
+
+1369681071 c:\users\yves\documents\repos\ibz casestudy\globale-vars.h
+
+1365458220 c:\users\yves\documents\ibz-casestudy\quellcode\export.h
+	<stdio.h>
+
+1369682759 c:\users\yves\documents\ibz-casestudy\quellcode\funktionen.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1369681523 c:\users\yves\documents\ibz-casestudy\quellcode\import.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1377633705 c:\users\yves\documents\ibz-casestudy\quellcode\menus.h
+	<stdio.h>
 	<stdlib.h>
 
-1372111560 source:c:\users\yves\documents\ibz-casestudy\quellcode\menus.c
+1366390441 source:c:\users\yves\documents\ibz-casestudy\quellcode\export.c
+	"export.h"
+
+1369681523 source:c:\users\yves\documents\ibz-casestudy\quellcode\funktionen.c
+	"funktionen.h"
+	"globale-vars.h"
+
+1369681523 c:\users\yves\documents\ibz-casestudy\quellcode\globale-vars.h
+
+1369681523 source:c:\users\yves\documents\ibz-casestudy\quellcode\import.c
+	"import.h"
+	"globale-vars.h"
+
+1377632871 source:c:\users\yves\documents\ibz-casestudy\quellcode\menus.c
 	"Menus.h"
 
-1372181341 c:\users\yves\documents\ibz-casestudy\quellcode\menus.h
+1373398137 source:c:\ibz-casestudy\quellcode\main.c
+	"main.h"
+
+1372705783 c:\ibz-casestudy\quellcode\main.h
+	<stdio.h>
+	<stdlib.h>
+	<stdlib.h>
+
+1372705758 c:\ibz-casestudy\quellcode\analyse.h
 	<stdio.h>
 	<stdlib.h>
 
-1372181342 c:\users\yves\documents\ibz-casestudy\quellcode\analyse.h
+1365454620 c:\ibz-casestudy\quellcode\export.h
+	<stdio.h>
+
+1369679159 c:\ibz-casestudy\quellcode\funktionen.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1369677923 c:\ibz-casestudy\quellcode\import.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1372177741 c:\ibz-casestudy\quellcode\menus.h
 	<stdio.h>
 	<stdlib.h>
 
-1372181342 c:\users\yves\documents\ibz-casestudy\quellcode\diversefunktionen.h
+1372091039 source:c:\ibz-casestudy\quellcode\funktionen.c
+	"funktionen.h"
+	"globale-vars.h"
+
+1369677923 c:\ibz-casestudy\quellcode\globale-vars.h
+
+1369677923 source:c:\ibz-casestudy\quellcode\import.c
+	"import.h"
+	"globale-vars.h"
+
+1366386841 source:c:\ibz-casestudy\quellcode\export.c
+	"export.h"
+
+1373398652 source:c:\ibz-casestudy\quellcode\menus.c
+	"Menus.h"
+
+1373392465 source:c:\ibz-casestudy\quellcode\analyse.c
+	"Analyse.h"
+
+1372707083 source:c:\ibz-casestudy\quellcode\diversefunktionen.c
+	"DiverseFunktionen.h"
+
+1372705764 c:\ibz-casestudy\quellcode\diversefunktionen.h
 	<stdio.h>
 	<stdlib.h>
 
-1372181260 source:c:\users\yves\documents\ibz-casestudy\quellcode\fehlermeldungen.c
+1373395294 source:c:\ibz-casestudy\quellcode\exportdatei.c
+	"ExportDatei.h"
+
+1372705783 c:\ibz-casestudy\quellcode\exportdatei.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1373396435 source:c:\ibz-casestudy\quellcode\fehlermeldungen.c
+	"Fehlermeldungen.h"
+
+1373395525 source:c:\ibz-casestudy\quellcode\importdatei.c
+	"ImportDatei.h"
+
+1372706011 c:\ibz-casestudy\quellcode\importdatei.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1372177574 source:c:\users\simon\desktop\case study\quellcode\diversefunktionen.c
+	"DiverseFunktionen.h"
+
+1372177742 c:\users\simon\desktop\case study\quellcode\diversefunktionen.h
+	<stdio.h>
+	<stdlib.h>
+
+1372107672 source:c:\users\simon\desktop\case study\quellcode\exportdatei.c
+	"ExportDatei.h"
+
+1372177742 c:\users\simon\desktop\case study\quellcode\exportdatei.h
+	<stdio.h>
+	<stdlib.h>
+
+1372177660 source:c:\users\simon\desktop\case study\quellcode\fehlermeldungen.c
+
+1372178705 source:c:\users\simon\desktop\case study\quellcode\importdatei.c
+	"ImportDatei.h"
+
+1372177742 c:\users\simon\desktop\case study\quellcode\importdatei.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1372178764 source:c:\users\simon\desktop\case study\quellcode\menus.c
+	"Menus.h"
+
+1372177741 c:\users\simon\desktop\case study\quellcode\menus.h
+	<stdio.h>
+	<stdlib.h>
+
+1372177742 source:c:\users\simon\desktop\case study\quellcode\main.c
+	"main.h"
+
+1372107881 c:\users\simon\desktop\case study\quellcode\main.h
+	<stdio.h>
+	<stdlib.h>
+	<stdlib.h>
+
+1372177574 source:c:\users\simon\desktop\case study\quellcode\analyse.c
+	"Analyse.h"
+
+1372177742 c:\users\simon\desktop\case study\quellcode\analyse.h
+	<stdio.h>
+	<stdlib.h>
+
+1372710683 source:c:\users\yves\documents\ibz-casestudy\quellcode\diversefunktionen.c
+	"DiverseFunktionen.h"
+
+1377632448 c:\users\yves\documents\ibz-casestudy\quellcode\diversefunktionen.h
+	<stdio.h>
+	<stdlib.h>
+
+1377634062 source:c:\users\yves\documents\ibz-casestudy\quellcode\fehlermeldungen.c
+	"Fehlermeldungen.h"
+
+1373399125 source:c:\users\yves\documents\ibz-casestudy\quellcode\importdatei.c
+	"ImportDatei.h"
+
+1377632448 c:\users\yves\documents\ibz-casestudy\quellcode\importdatei.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1377633646 source:c:\users\yves\documents\ibz-casestudy\quellcode\exportdatei.c
+	"ExportDatei.h"
+
+1377632448 c:\users\yves\documents\ibz-casestudy\quellcode\exportdatei.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1372177742 c:\ibz-casestudy\quellcode\fehlermeldungen.h
+	<stdio.h>
+	<stdlib.h>
+
+1372181342 c:\users\yves\documents\ibz-casestudy\quellcode\fehlermeldungen.h
+	<stdio.h>
+	<stdlib.h>
 

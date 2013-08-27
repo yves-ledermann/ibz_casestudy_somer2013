@@ -1,8 +1,10 @@
 #include "Analyse.h"
 
+// Globale Variablen
 extern int iAnzahlMessungen;
 extern double ** afMesswerte;
 
+// Funktion zum Berechnen der Werte
 int Analyse(int SelectedRow, int SelectedValue)
 {
     float fpuffer = afMesswerte[0][SelectedRow];
@@ -18,7 +20,7 @@ int Analyse(int SelectedRow, int SelectedValue)
                     fpuffer=afMesswerte[x][SelectedRow];
                 }
             }
-            printf("Der Maximal-Wert ist %f\n", fpuffer);
+            printf("\nDer Maximal-Wert ist %f\n", fpuffer);
             break;
 
         case 2:     //Minimal-Wert
@@ -30,7 +32,7 @@ int Analyse(int SelectedRow, int SelectedValue)
                     fpuffer=afMesswerte[x][SelectedRow];
                 }
             }
-            printf("Der Minimal-Wert ist %f\n", fpuffer);
+            printf("\nDer Minimal-Wert ist %f\n", fpuffer);
             break;
 
         case 3:     //Durchschnitts-Wert
@@ -41,12 +43,12 @@ int Analyse(int SelectedRow, int SelectedValue)
             {
                 fpuffer +=afMesswerte[x][SelectedRow];
             }
-            printf("Der Durchschnitts-Wert ist %f\n", fpuffer/iAnzahlMessungen);
+            printf("\nDer Durchschnitts-Wert ist %f\n", fpuffer/iAnzahlMessungen);
             break;
     }
     #ifdef DEBUG
-    printf("Sie haben folgende Spalte gewählt %d\n", SelectedRow);
-    printf("Sie haben folgenden Wert gewählt %d\n", SelectedValue);
+    printf("Sie haben folgende Spalte gew\x84hlt %d\n", SelectedRow);
+    printf("Sie haben folgenden Wert gew\x84hlt %d\n", SelectedValue);
     #endif
 
     return 0;

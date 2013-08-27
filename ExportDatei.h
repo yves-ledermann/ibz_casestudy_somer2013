@@ -3,9 +3,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-#define DEBUG
-
-
+#include <string.h>
 
 #endif // EXPORTDATEI_H_INCLUDED

@@ -4,15 +4,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define DEBUG
+// Debug switch
 
-    //Test zum loeschen der Konsole
-    #include <stdlib.h>
+// #define DEBUG
+
+//zum loeschen der Konsole
     #if WIN32
     #define CLEAR system( "cls" );
     #endif
     #if LINUX
     #define CLEAR system( "clear" );
+    #endif
+
+//zum warten auf Tasteneingabe
+    #if WIN32
+    #define WARTE printf("\n\n"); system("Pause");
     #endif
 
 #endif // MAIN_H_INCLUDED

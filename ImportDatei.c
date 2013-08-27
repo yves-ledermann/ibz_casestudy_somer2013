@@ -17,8 +17,6 @@ int ImportDatei(char* acDateiNameEinlesen)
     char puffer[200];
     char acWert[20];
 
- // #include "globale-vars.h"
-
     #ifdef DEBUG
     printf("%s\n", acDateiNameEinlesen);
     #endif
@@ -53,7 +51,7 @@ int ImportDatei(char* acDateiNameEinlesen)
         case 20: // Kopfzeile überprüfen
 
             #ifdef DEBUG
-            printf("status Kopfzeilenvergelich %d\n", strncmp ( Kopfzeile ,acKopfzeile,32));
+            printf("Status Kopfzeilenvergelich %d\n", strncmp ( Kopfzeile ,acKopfzeile,32));
             #endif
 
             if ((strncmp ( Kopfzeile ,acKopfzeile,32))!=0)
@@ -133,7 +131,7 @@ int ImportDatei(char* acDateiNameEinlesen)
                                 acWert[z]= puffer[i];
 
                                 #ifdef DEBUG
-                                printf("Char-puffer %d %s\n", i, acWert);
+                                printf("Char-Puffer %d %s\n", i, acWert);
                                 #endif
                                 i++;
                                 z++;
@@ -141,7 +139,7 @@ int ImportDatei(char* acDateiNameEinlesen)
                          while (puffer[i]!= 58); // AbbruchZeichen ist :
 
                                 #ifdef DEBUG
-                                printf("while abbruch char  %d \n",puffer[i]);
+                                printf("While Abbruch char  %d \n",puffer[i]);
                                 #endif
 
                         i++;

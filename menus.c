@@ -8,24 +8,24 @@ int HauptMenu(int iDateiGeladen)
     printf("MAINMENU:\n");
     #endif // DEBUG
 
-  /*  #ifndef DEBUG
+    #ifndef DEBUG
     //Bildschirm leeren
     CLEAR
     #endif // DEBUG
-*/
 
 
 
- printf(" _    _                   _                        _   _ \n");
- printf("| |  | |                 | |                      (_) (_)\n");
- printf("| |__| | __ _ _   _ _ __ | |_ _ __ ___   ___ _ __  _   _ \n");
- printf("|  __  |/ _` | | | | '_ \\| __| '_ ` _ \\ / _ \\ '_ \\| | | |\n");
- printf("| |  | | (_| | |_| | |_) | |_| | | | | |  __/ | | | |_| |\n");
- printf("|_|  |_|\\__,_|\\__,_| .__/ \\__|_| |_| |_|\\___|_| |_|\\__,_|\n");
- printf("                    | |                                  \n");
- printf("                    |_|                                   \n");
- printf("\n");
-
+printf("\n");
+printf(" _    _                   _                        _   _ \n");
+printf("| |  | |                 | |                      (_) (_)\n");
+printf("| |__| | __ _ _   _ _ __ | |_ _ __ ___   ___ _ __  _   _ \n");
+printf("|  __  |/ _` | | | | '_ \\| __| '_ ` _ \\ / _ \\ '_ \\| | | |\n");
+printf("| |  | | (_| | |_| | |_) | |_| | | | | |  __/ | | | |_| |\n");
+printf("|_|  |_|\\__,_|\\__,_| .__/ \\__|_| |_| |_|\\___|_| |_|\\__,_|\n");
+printf("                    | |                                  \n");
+printf("                    |_|                                   \n");
+printf("\n");
+printf("\n");
 
     printf("1 Einlesen der Datei mit den Messwerten\n");
     if (iDateiGeladen==98)
@@ -33,9 +33,20 @@ int HauptMenu(int iDateiGeladen)
         printf("2 Ausgeben der Messwerte am Bildschirm\n");
         printf("3 Auswertung der Messwerte\n");
         printf("4 Exportieren der Messwerte\n");
+        printf("5 Beenden des Programms\n");
+        printf("\nBitte eine Auswahl treffen\n");
     }
-    printf("5 Beenden des Programms\n");
+    else
+    {
+        printf("5 Beenden des Programms\n");
+        printf("\nKeine Datei geladen\num alle Optionen zu sehen\x2C bitte zuerst eine Datei laden\x2E\n");
+    }
+
     scanf("%d", &iMainMenuSelection);
+   /* char buf[2];
+    fgets(buf, 2, stdin);
+    sscanf(buf, "%d", &iMainMenuSelection );
+    */
     return (iMainMenuSelection);
 }
 

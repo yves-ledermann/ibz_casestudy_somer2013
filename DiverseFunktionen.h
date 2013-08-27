@@ -4,7 +4,4 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define DEBUG
-
-
 #endif // DIVERSEFUNKTIONEN_H_INCLUDED

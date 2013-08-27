@@ -4,4 +4,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//zum loeschen der Konsole
+    #if WIN32
+    #define CLEAR system( "cls" );
+    #endif
+    #if LINUX
+    #define CLEAR system( "clear" );
+    #endif
+
 #endif // MENUS_H_INCLUDED

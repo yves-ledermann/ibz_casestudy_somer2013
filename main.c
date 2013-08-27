@@ -4,7 +4,7 @@
 int iAnzahlMessungen=0;
 double ** afMesswerte=NULL;
 
-
+// Funktionen
 int ExportDatei(char* acDateiNameExport);
 int Analyse(int SelectedRow, int SelectedValue);
 int SpeicherFreigeben();
@@ -12,6 +12,7 @@ int ImportDatei(char* acDateiNameEinlesen);
 int HauptMenu(int iDateiGeladen);
 int MenuAuswahlSpalte();
 int MenuAuswahlBerechnung();
+int AnzeigeFehlermeldung(int iFehlermeldung);
 
 
 int main(int argc, char *argv[])
@@ -24,25 +25,29 @@ int main(int argc, char *argv[])
     int iExportStatus=0;
 
     char acDateiNameEinlesen[FILENAME_MAX]; // Dateiname zum Einlesen
-    char acDateiNameExport[FILENAME_MAX]; // Dateiname zum Exportieren
+    char acDateiNameExport[FILENAME_MAX];  // Dateiname zum Exportieren
 
     int X=0;
 
     // Auf Kommandozeilen Argumente prüfen
     if (argc == 2)
     {
-         #ifdef DEBUG
+        #ifdef DEBUG
         printf("Datei von Kommandozeile\n");
         printf("%s\n", argv[1]);
         #endif // DEBUG
 
         //Übergabe des Dateinamens an readFile();
         iEinlesenStatus=ImportDatei(argv[1]);
+
         #ifdef DEBUG
         printf("%d", iEinlesenStatus);
         #endif
 
-
+        if (iEinlesenStatus != 98){
+        AnzeigeFehlermeldung(iEinlesenStatus);
+        WARTE
+        }
     }
 
 
@@ -61,7 +66,7 @@ int main(int argc, char *argv[])
             #endif // DEBUG
 
             //Abfrage des Dateinamens
-            printf("Bitte Dateinamen eingeben\n");
+            printf("Bitte Dateiname eingeben\n\n");
             scanf("%s", acDateiNameEinlesen);
 
             //Übergabe des Dateinamens an readFile();
@@ -70,24 +75,26 @@ int main(int argc, char *argv[])
             printf("%d", iEinlesenStatus);
             #endif
             //Rückgabewert auswerten
-
+            if (iEinlesenStatus != 98){
+            AnzeigeFehlermeldung(iEinlesenStatus);
+            }
+            WARTE
             break;
 
         case 2: //Ausgeben der Messwerte am Bildschirm
             #ifdef DEBUG
             printf("2 Ausgeben der Messwerte am Bildschirm\n");
-            printf("ianzahlmessungen ist %d\n", iAnzahlMessungen);
+            printf("iAnzahlMessungen ist %d\n", iAnzahlMessungen);
             #endif // DEBUG
 
             X=0;
-
-
             printf("\nMessung Nr \tSollwert \tIstwert \tRegeldifferenz");
             for (X = 0; X < iAnzahlMessungen ; X++)
             {
                 printf("\n%3i \t\t%.3f \t\t%.3f \t\t%.3f", X+1, afMesswerte[X][0], afMesswerte[X][1], afMesswerte[X][2]);
             };
 
+            WARTE
 
         break;
 
@@ -98,6 +105,8 @@ int main(int argc, char *argv[])
             iWert=MenuAuswahlBerechnung();
             if ((iWert !=4) || (iSpalte !=4))
             Analyse(iSpalte, iWert);
+
+           WARTE
             break;
 
         case 4: //Exportieren der Messwerte
@@ -107,7 +116,7 @@ int main(int argc, char *argv[])
             #endif // DEBUG
 
             //Abfrage des Dateinamens
-            printf("Bitte Dateinamen für Export eingeben\n");
+            printf("Bitte Dateinamen f\x81r Export eingeben\n");
             scanf("%s", acDateiNameExport);
 
             //Übergabe des Dateinamens an Export();
@@ -115,24 +124,27 @@ int main(int argc, char *argv[])
 
             //Meldung export
             if (iExportStatus)
-                printf("Daten erfolgreich Exportiert\n");
+                printf("Daten wurden erfolgreich Exportiert\n");
             else
                 printf("Die Daten konnten nicht exportiert werden\n");
+
+           WARTE
             break;
 
         }
         case 5: //Beenden des Programms
+             if (iEinlesenStatus == 98){
             SpeicherFreigeben();
+             }
 
             iHauptMenuEnde=1;
             break;
 
         default: //Fehlermeldung
-            printf("Falsche Eingabe\n");
+            printf("\n Falsche Eingabe\n");
             break;
         }
 
-        // Fehlermeldungen
     }
     while (!iHauptMenuEnde);
 

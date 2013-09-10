@@ -4,8 +4,6 @@
 extern int iAnzahlMessungen;
 extern double ** afMesswerte;
 
-/*Funktion zum Berechnen der Werte, = Definition / Der Parameter iSelectedRow wird von der Funktion (int MenuAuswahlSpalte) übernommen.
-Der Parameter iSelectedValue wird von der Funktion (int MenuAuswahlBerechnung) übernommen*/
 int Analyse(int iSelectedRow, int iSelectedValue)
 {
     float fpuffer = afMesswerte[0][iSelectedRow]; // erster Wert auf den Puffer setzen. Wegen denn negativen Werten
@@ -14,11 +12,11 @@ int Analyse(int iSelectedRow, int iSelectedValue)
     {
         case 1:     //Maximal-Wert
 
-            for(x=0;x<iAnzahlMessungen;x++) // Variable x wird nach oben gezählt solange sie klener als die Variable iAnzahlMessungen ist.
+            for(x=0;x<iAnzahlMessungen;x++)
             {
-                if (fpuffer<afMesswerte[x][iSelectedRow]) // Überprüfen ob Messwert kleiner als Puffer.
+                if (fpuffer<afMesswerte[x][iSelectedRow])
                 {
-                    fpuffer=afMesswerte[x][iSelectedRow]; // Wenn Messwert kleiner, wird er in Puffer übertragen.
+                    fpuffer=afMesswerte[x][iSelectedRow];
                 }
             }
             printf("\nDer Maximal-Wert ist %f\n", fpuffer);

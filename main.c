@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) //argc= Anzahl kommandozeilen Argumente, argv I
     int iExportStatus=0;
     int X=0;
 
-    char acDateiNameEinlesen[FILENAME_MAX]; // Dateiname zum Einlesen// FILENAME_MAX ist in stdio.h maximale länge des Dateinamens.
+    char acDateiNameEinlesen[FILENAME_MAX]; // Dateiname zum Einlesen
     char acDateiNameExport[FILENAME_MAX];  // Dateiname zum Exportieren
 
 
@@ -34,12 +34,12 @@ int main(int argc, char *argv[]) //argc= Anzahl kommandozeilen Argumente, argv I
 
     if (argc == 2) // Anzahl kommandozeilen Argumente
     {
-                                #ifdef DEBUG  // War eine Hilfe für uns damit wir die zurückgegebenen Werte sehen.
+                                #ifdef DEBUG
                                 printf("Datei von Kommandozeile\n");
                                 printf("%s\n", argv[1]);
                                 #endif // DEBUG
 
-        //Übergabe des Dateinamens an readFile();
+        //Übergabe des Dateinamens an ImportDatei();
         iEinlesenStatus=ImportDatei(argv[1]);
 
                                 #ifdef DEBUG
@@ -54,50 +54,43 @@ int main(int argc, char *argv[]) //argc= Anzahl kommandozeilen Argumente, argv I
 
 
     //Haupt-Menü
-    do // MainMenu
+    do
     {
-
         // Menü-Auswahl Anzeigen und Auswahl einlesen
         iHauptMenuAuswahl=HauptMenu(iEinlesenStatus); // Funktion Hauptmenü
 
-        //
         switch (iHauptMenuAuswahl) // Menü Auswahl 1,2,3,4,5,)
         {
         case 1: //Einlesen der Datei mit den Messwerte
 
-            #ifdef DEBUG
-            printf("1 Einlesen der Datei mit den Messwerten\n");
-            #endif // DEBUG
+                #ifdef DEBUG
+                printf("1 Einlesen der Datei mit den Messwerten\n");
+                #endif // DEBUG
 
             //Abfrage des Dateinamens
             printf("Bitte Dateiname eingeben\n\n");
             scanf("%s", acDateiNameEinlesen);
 
             //Übergabe des Dateinamens an Importdatei();
-
-            // Wechsel zur Funktion Import (Yves)!!!
-
-
             iEinlesenStatus=ImportDatei(acDateiNameEinlesen);
-            #ifdef DEBUG
-            printf("%d", iEinlesenStatus);
-            #endif
+                #ifdef DEBUG
+                printf("%d", iEinlesenStatus);
+                #endif
             //Rückgabewert auswerten
-            // Wenn nicht geladen ist nicht 98
+            // Wenn geladen ist 98
             if (iEinlesenStatus != 98)
             AnzeigeFehlermeldung(iEinlesenStatus);
-            // Wenn geladen ist 98
             else
             printf("\nDatei wurde erfolgreich geladen\n");
             WARTE
             break;
 
         case 2: //Ausgeben der Messwerte am Bildschirm
-            #ifdef DEBUG
-            printf("2 Ausgeben der Messwerte am Bildschirm\n");
-            printf("iAnzahlMessungen ist %d\n", iAnzahlMessungen);
-            #endif // DEBUG
-            // Wiedergeben am Bildschirm des Arrays afMesswerte()
+                #ifdef DEBUG
+                printf("2 Ausgeben der Messwerte am Bildschirm\n");
+                printf("iAnzahlMessungen ist %d\n", iAnzahlMessungen);
+                #endif // DEBUG
+
             X=0;
             printf("\nMessung Nr \t Sollwert \t Istwert \tRegeldifferenz");
             for (X = 0; X < iAnzahlMessungen ; X++)
@@ -112,47 +105,33 @@ int main(int argc, char *argv[]) //argc= Anzahl kommandozeilen Argumente, argv I
         case 3: //Auswertung der Messwerte
             printf("3 Auswertung der Messwerte\n");
 
-            iSpalte=MenuAuswahlSpalte(); // Funktions Aufruf MenuAuswahlSpalte()
-
-            // Wechsel zur Funktion MenuAuswahlSpalte!!
-
+            iSpalte=MenuAuswahlSpalte();
             if ((iSpalte<=3) && (iSpalte>=1))
                 {
                   iWert=MenuAuswahlBerechnung();
 
-                  // Wechsel zur Funktion MenuAuswahlBerechnung!!!!
-
                     if ((iWert>=1) && (iWert <=3))
                         {
-                           Analyse(iSpalte-1, iWert);// Funktion Analyse, iWert gibt an was berechnet wird.
-
-                           // Wechsel zur Funktion Analyse !!!!
-
+                           Analyse(iSpalte-1, iWert);
                         }
                     else
                     printf("Falsche Eingabe oder Abbruch\n");
-
                 }
-
             else
             printf("Falsche Eingabe oder Abbruch\n");
 
             WARTE
-            break; // bei Tastendruck folgt break=wieder zurück zum Hauptmenu
+            break;
 
         case 4: //Exportieren der Messwerte
         {
-            #ifdef DEBUG
-            printf("4 Exportieren der Messwerte\n");
-            #endif // DEBUG
+                #ifdef DEBUG
+                printf("4 Exportieren der Messwerte\n");
+                #endif // DEBUG
 
             //Abfrage des Dateinamens
             printf("Bitte Dateinamen f\x81r Export eingeben\n");
             scanf("%s", acDateiNameExport);
-
-            //Übergabe des Dateinamens an Export();
-
-            // Wechsel zur Funktion ExportDatei!!!!
 
             iExportStatus=ExportDatei(acDateiNameExport);
 
@@ -167,25 +146,20 @@ int main(int argc, char *argv[]) //argc= Anzahl kommandozeilen Argumente, argv I
 
         }
         case 5: //Beenden des Programms
-             if (iEinlesenStatus == 98){
-
-            SpeicherFreigeben(); // Funktion SpeicherFreigeben()
-
-            // Wechsel zur Funktion SpeicherFreigeben!!!!
-
-             }
+            if (iEinlesenStatus == 98)
+                SpeicherFreigeben();
 
             iHauptMenuEnde=1;
             break;
 
         default: //Fehlermeldung
             printf("\n Falsche Eingabe\n");
-             WARTE
+            WARTE
             break;
         }
 
     }
-    while (!iHauptMenuEnde); //Solange kein 1 in iHauptMenuEnde wieder Hauptmenu Anzeige.
+    while (!iHauptMenuEnde);
 
     return 0;
 }

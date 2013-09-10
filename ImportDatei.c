@@ -154,8 +154,9 @@ int ImportDatei(char* acDateiNameEinlesen) // Definition der Funktion
 
 
                     }
-                while (puffer[1+i]!= '\0'); // Wenn Zeilenende erreicht dann eine Spalte vertikal nach unten und weiter......
+                while (puffer[1+i]!= '\0');
 
+                // Wenn Zeilenende erreicht dann eine Spalte vertikal nach unten und weiter......
                 x++;
                 i=0;
                 y=0;
@@ -165,7 +166,7 @@ int ImportDatei(char* acDateiNameEinlesen) // Definition der Funktion
             while (x < iAnzahlMessungen);
 
         case 70: // Datei erfolgreich eingelesen
-                // Springt weiter auf 98 = Reserve
+                // Springt weiter auf 98 (Reserve-Platz)
 
 
 

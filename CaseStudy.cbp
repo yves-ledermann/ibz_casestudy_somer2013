@@ -49,9 +49,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="ImportDatei.h" />
-		<Unit filename="Menus.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="Menus.h" />
 		<Unit filename="analyse.c">
 			<Option compilerVar="CC" />
@@ -60,10 +57,22 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.h" />
+		<Unit filename="menus.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

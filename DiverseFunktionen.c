@@ -21,6 +21,6 @@ int SpeicherFreigeben()
     // Jetzt können die leeren afMesswerte freigegeben werden
     free(afMesswerte);
 
-    return 1;
+    return 0;
 }
 

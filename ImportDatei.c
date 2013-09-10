@@ -1,18 +1,18 @@
 #include "ImportDatei.h"
 
+// Anmelden der Globalen Variable
 extern int iAnzahlMessungen;
 extern double ** afMesswerte;
 
 
-int ImportDatei(char* acDateiNameEinlesen)
+int ImportDatei(char* acDateiNameEinlesen) // Definition der Funktion
 {
     int iImportStatus=0;
-    FILE *datei;
+    FILE *datei;        // Datei Pointer
     char acKopfzeile[100];
     char acAnzahlMessungen[20];
-    int iStateImport=0;
+    int iStateMachineImport=0;
     int i=0, x=0, y=0, z=0;
-    /* afMesswerte ist Zeiger auf double-Zeiger. */
 
     char puffer[200];
     char acWert[20];
@@ -22,14 +22,14 @@ int ImportDatei(char* acDateiNameEinlesen)
     #endif
 
 
-    switch (iStateImport)
+    switch (iStateMachineImport)
         {
         case 0: //Datei öffnen
 
             datei=fopen(acDateiNameEinlesen, "r");
 
             #ifdef DEBUG
-            printf("%d", iStateImport);
+            printf("%d", iStateMachineImport);
             #endif
 
             if (datei == NULL){
@@ -54,7 +54,7 @@ int ImportDatei(char* acDateiNameEinlesen)
             printf("Status Kopfzeilenvergelich %d\n", strncmp ( Kopfzeile ,acKopfzeile,32));
             #endif
 
-            if ((strncmp ( Kopfzeile ,acKopfzeile,32))!=0)
+            if ((strncmp ( Kopfzeile ,acKopfzeile,32))!=0)// Wenn 0 ist OK.
                 {
                     iImportStatus=20; // Kopfzeile falsch
                     break;
@@ -67,7 +67,7 @@ int ImportDatei(char* acDateiNameEinlesen)
                     printf("Anzahl Messungen CArray %s\n", acAnzahlMessungen);
                     #endif
 
-                    iAnzahlMessungen=atoi(acAnzahlMessungen);
+                    iAnzahlMessungen=atoi(acAnzahlMessungen);// Messwerte von einem String in eine Zahl umwandeln
 
                     #ifdef DEBUG
                     printf("Anzahl Messungen INT %d\n", iAnzahlMessungen);
@@ -89,7 +89,7 @@ int ImportDatei(char* acDateiNameEinlesen)
         case 50: // Array grösse festlegen  & speicher zuweisen
 
             // Speicher reservieren für die float-Zeiger (=iAnzahlMessungen)
-            afMesswerte = malloc(iAnzahlMessungen * sizeof(double *));
+            afMesswerte = malloc(iAnzahlMessungen * sizeof(double *));// Anlegen der ersten Spalte Grösse Anzahlmessungen x Grösse double Variable.
 
             if(NULL == afMesswerte)
                 {
@@ -97,7 +97,7 @@ int ImportDatei(char* acDateiNameEinlesen)
                 break;
                 }
 
-            // jetzt noch Speicher reservieren für die einzelnen Spalten
+            // jetzt noch Speicher reservieren für die einzelnen Spalten Horizontal
             // der i-ten iAnzahlMessungen
             for(i = 0; i < iAnzahlMessungen; i++)
             {
@@ -136,14 +136,14 @@ int ImportDatei(char* acDateiNameEinlesen)
                                 i++;
                                 z++;
                             }
-                         while (puffer[i]!= 58); // AbbruchZeichen ist :
+                         while (puffer[i]!= 58); // AbbruchZeichen ist : // 58 ist Wert aus Ascitabelle
 
                                 #ifdef DEBUG
                                 printf("While Abbruch char  %d \n",puffer[i]);
                                 #endif
 
                         i++;
-                        acWert[z]='\0';
+                        acWert[z]='\0';  // String abschliessen damit wir den Wert von einem char in ein float umwandeln können.
                         #ifdef DEBUG
                                 printf("acWert zum speichern %d %d %s\n", x, y, acWert);
                                 #endif
@@ -154,7 +154,7 @@ int ImportDatei(char* acDateiNameEinlesen)
 
 
                     }
-                while (puffer[1+i]!= '\0');
+                while (puffer[1+i]!= '\0'); // Wenn Zeilenende erreicht dann eine Spalte vertikal nach unten und weiter......
 
                 x++;
                 i=0;
@@ -165,11 +165,12 @@ int ImportDatei(char* acDateiNameEinlesen)
             while (x < iAnzahlMessungen);
 
         case 70: // Datei erfolgreich eingelesen
+                // Springt weiter auf 98 = Reserve
 
 
 
         case 98:
-            iImportStatus=98; //Datei eingelesen
+            iImportStatus=98; //Datei erfolgreich eingelesen
             break;
         default:
             iImportStatus=99; //Unbehandelte Fehlermeldung

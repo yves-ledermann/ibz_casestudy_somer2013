@@ -6,7 +6,7 @@
 
 // Debug switch
 
-// #define DEBUG
+//#define DEBUG
 
 //zum loeschen der Konsole
     #if WIN32

@@ -1,15 +1,18 @@
 #include "Menus.h"
 
+
 // Haupmenü anzeigen
 int HauptMenu(int iDateiGeladen)
 {
     int iMainMenuSelection=0;
-    #ifdef DEBUG
-    printf("MAINMENU:\n");
-    #endif // DEBUG
+    char buf=0;
 
+                        #ifdef DEBUG
+                        printf("MAINMENU:\n");
+                        #endif // DEBUG
+
+    //Bildschirm leeren wenn nicht DEBUG
     #ifndef DEBUG
-    //Bildschirm leeren
     CLEAR
     #endif // DEBUG
 
@@ -42,11 +45,16 @@ printf("\n");
         printf("\nKeine Datei geladen\num alle Optionen zu sehen\x2C bitte zuerst eine Datei laden\x2E\n");
     }
 
-    scanf("%d", &iMainMenuSelection);
-   /* char buf[2];
-    fgets(buf, 2, stdin);
-    sscanf(buf, "%d", &iMainMenuSelection );
-    */
+    // Einlesen der Menü-Auswahl
+    buf=getch();
+    // Umwandeln in Int
+    sscanf(&buf, "%d", &iMainMenuSelection );
+
+
+                    #ifdef DEBUG
+                    printf("\nselection:%d\n",iMainMenuSelection);
+                    #endif // DEBUG
+
     return (iMainMenuSelection);
 }
 
@@ -55,27 +63,43 @@ printf("\n");
 int MenuAuswahlSpalte()
 {
     int iRowSelection=0;
+    char buf=0;
 
-    printf("1 Sollwert\n");
+    // Untermenü anzeigen
+    printf("\n\n1 Sollwert\n");
     printf("2 Istwert\n");
     printf("3 Regeldifferenz\n");
     printf("4 Abbrechen\n");
 
-    scanf("%d", &iRowSelection);
+    // Auswahl Zeichenweise einlesen
+    buf=getch();
+    // und nach INT umwandeln
+    sscanf(&buf, "%d", &iRowSelection );
 
-    return (iRowSelection-1);
+    #ifdef DEBUG
+    printf("\nselection:%d\n",iRowSelection);
+    #endif // DEBUG
+
+    return (iRowSelection);
 }
 
 int MenuAuswahlBerechnung()
 {
     int iValueSelection=0;
+    char buf=0;
 
-    printf("1 Maximal-Wert\n");
+    // Anzeige des Untermenüs
+    printf("\n\n1 Maximal-Wert\n");
     printf("2 Minimal-Wert\n");
     printf("3 Durchschnitt\n");
     printf("4 Abbrechen\n");
 
-    scanf("%d", &iValueSelection);
+    buf=getch();
+    sscanf(&buf, "%d", &iValueSelection );
+
+    #ifdef DEBUG
+    printf("\nselection:%d\n",iValueSelection);
+    #endif // DEBUG
 
     return (iValueSelection);
 }

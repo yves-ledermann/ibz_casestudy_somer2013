@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>      //getch-Funktion
 
 //zum loeschen der Konsole
     #if WIN32

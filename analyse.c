@@ -19,7 +19,7 @@ int Analyse(int iSelectedRow, int iSelectedValue)
                     fpuffer=afMesswerte[x][iSelectedRow];
                 }
             }
-            printf("\nDer Maximal-Wert ist %f\n", fpuffer);
+            printf("\nDer Maximal-Wert ist %.3f\n", fpuffer);
             break;
 
         case 2:     //Minimal-Wert
@@ -31,7 +31,7 @@ int Analyse(int iSelectedRow, int iSelectedValue)
                     fpuffer=afMesswerte[x][iSelectedRow];
                 }
             }
-            printf("\nDer Minimal-Wert ist %f\n", fpuffer);
+            printf("\nDer Minimal-Wert ist %.3f\n", fpuffer);
             break;
 
         case 3:     //Durchschnitts-Wert
@@ -42,7 +42,7 @@ int Analyse(int iSelectedRow, int iSelectedValue)
             {
                 fpuffer +=afMesswerte[x][iSelectedRow];
             }
-            printf("\nDer Durchschnitts-Wert ist %f\n", fpuffer/iAnzahlMessungen); //Puffer durch die Anzahl Messungen
+            printf("\nDer Durchschnitts-Wert ist %.3f\n", fpuffer/iAnzahlMessungen); //Puffer durch die Anzahl Messungen
             break;
     }
     #ifdef DEBUG
